@@ -38,3 +38,39 @@ function showWeather(data) {
     <p class="description">${desc}</p>
   `;
 }
+
+ // 📍 Dados principais
+    document.getElementById("cityName").textContent =
+      `${data.name}, ${data.sys.country}`;
+
+    document.getElementById("temperature").textContent =
+      `${Math.round(data.main.temp)}°C`;
+
+    document.getElementById("description").textContent =
+      data.weather[0].description;
+
+    // 💧 Umidade
+    document.getElementById("humidity").textContent =
+      `${data.main.humidity}%`;
+
+    // 🌬️ Vento
+    document.getElementById("wind").textContent =
+      `${Math.round(data.wind.speed * 3.6)} km/h`;
+
+    // 🔻🔺 Min / Max
+    document.getElementById("tempMin").textContent =
+      `${Math.round(data.main.temp_min)}°C`;
+
+    document.getElementById("tempMax").textContent =
+      `${Math.round(data.main.temp_max)}°C`;
+
+    // 🌤️ Ícone
+    const icon = data.weather[0].icon;
+
+    document.getElementById("weatherIcon").src =
+      `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
+  } catch {
+    alert("Erro ao buscar clima");
+  }
+}
