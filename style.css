@@ -1,96 +1,58 @@
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: 0.4s;
 }
 
-body {
-  height: 100vh;
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+/* Fundos por clima */
+body.clear { background: linear-gradient(#4facfe,#00f2fe); }
+body.clouds { background: linear-gradient(#757f9a,#d7dde8); }
+body.rain { background: linear-gradient(#314755,#26a0da); }
+body.snow { background: linear-gradient(#e6dada,#274046); }
+
+/* Dark */
+body.dark {
+  background: #111;
+}
+
+#themeToggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .container {
   text-align: center;
 }
 
-h1 {
-  margin-bottom: 20px;
-}
-
-.search-box {
-  margin-bottom: 20px;
-}
-
-.search-box input {
-  padding: 12px;
-  width: 200px;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  font-size: 16px;
-}
-
-.search-box button {
-  padding: 12px 15px;
-  border: none;
-  border-radius: 8px;
-  background: #222;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.search-box button:hover {
-  background: #000;
-}
-
 .weather-card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 30px;
+  background: rgba(255,255,255,0.15);
+  padding: 20px;
   border-radius: 20px;
-  width: 320px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.weather-card img {
-  width: 90px;
+  backdrop-filter: blur(10px);
 }
 
 .temperature {
-  font-size: 42px;
-  margin: 10px 0;
-  font-weight: bold;
+  font-size: 40px;
 }
 
-.description {
-  text-transform: capitalize;
-}
-
-.details {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+/* Forecast */
+.forecast {
+  display: flex;
+  gap: 10px;
   margin-top: 20px;
 }
 
-.detail-box {
+.forecast-card {
   background: rgba(255,255,255,0.2);
-  padding: 12px;
-  border-radius: 12px;
-}
-
-.detail-box span {
-  font-size: 14px;
-}
-
-.detail-box strong {
-  display: block;
-  font-size: 18px;
-  margin-top: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 80px;
 }

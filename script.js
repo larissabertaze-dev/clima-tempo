@@ -1,62 +1,145 @@
 const API_KEY = "242c2d80bb4c5b016e11fc8e4bacfade";
 
+const themeToggle = document.getElementById("themeToggle");
+
+/* 🌗 Tema */
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
+
+/* 🔎 Buscar cidade */
 async function buscarClima() {
-
   const cidade = document.getElementById("cityInput").value;
+  if (!cidade) return;
+  carregarClima(cidade);
+}
 
-  if (!cidade) {
-    alert("Digite uma cidade");
-    return;
-  }
+/* 📍 Geolocalização */
+function climaAtual() {
+  navigator.geolocation.getCurrentPosition((pos) => {
+
+    const lat = pos.coords.latitude;
+    const lon = pos.coords.longitude;
+
+    carregarClimaCoords(lat, lon);
+  });
+}
+
+/* 🌦️ Clima por cidade */
+async function carregarClima(cidade) {
 
   const url =
-    `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${API_KEY}&units=metric&lang=pt_br`;
+  `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${API_KEY}&units=metric&lang=pt_br`;
 
-  try {
+  const res = await fetch(url);
+  const data = await res.json();
 
-    const response = await fetch(url);
-    const data = await response.json();
+  mostrarClima(data);
+  carregarForecast(cidade);
+}
 
-    if (data.cod !== 200) {
-      alert("Cidade não encontrada");
-      return;
-    }
+/* 🌦️ Clima por coordenadas */
+async function carregarClimaCoords(lat, lon) {
 
-    // 📍 Cidade
-    document.getElementById("cityName").textContent =
-      `${data.name}, ${data.sys.country}`;
+  const url =
+  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=pt_br`;
 
-    // 🌡️ Temperatura
-    document.getElementById("temperature").textContent =
-      `${Math.round(data.main.temp)}°C`;
+  const res = await fetch(url);
+  const data = await res.json();
 
-    // 📝 Descrição
-    document.getElementById("description").textContent =
-      data.weather[0].description;
+  mostrarClima(data);
+  carregarForecastCoords(lat, lon);
+}
 
-    // 💧 Umidade
-    document.getElementById("humidity").textContent =
-      `${data.main.humidity}%`;
+/* 🖥️ Mostrar clima */
+function mostrarClima(data) {
 
-    // 🌬️ Vento (m/s → km/h)
-    document.getElementById("wind").textContent =
-      `${Math.round(data.wind.speed * 3.6)} km/h`;
+  document.getElementById("cityName").textContent =
+    `${data.name}, ${data.sys.country}`;
 
-    // 🔻🔺 Min / Max
-    document.getElementById("tempMin").textContent =
-      `${Math.round(data.main.temp_min)}°C`;
+  document.getElementById("temperature").textContent =
+    `${Math.round(data.main.temp)}°C`;
 
-    document.getElementById("tempMax").textContent =
-      `${Math.round(data.main.temp_max)}°C`;
+  document.getElementById("description").textContent =
+    data.weather[0].description;
 
-    // 🌤️ Ícone
-    const icon = data.weather[0].icon;
+  document.getElementById("humidity").textContent =
+    `${data.main.humidity}%`;
 
-    document.getElementById("weatherIcon").src =
-      `https://openweathermap.org/img/wn/${icon}@2x.png`;
+  document.getElementById("wind").textContent =
+    `${Math.round(data.wind.speed * 3.6)} km/h`;
 
-  } catch (error) {
-    alert("Erro ao buscar clima");
-    console.error(error);
-  }
+  document.getElementById("tempMin").textContent =
+    `${Math.round(data.main.temp_min)}°C`;
+
+  document.getElementById("tempMax").textContent =
+    `${Math.round(data.main.temp_max)}°C`;
+
+  document.getElementById("weatherIcon").src =
+    `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+  mudarBackground(data.weather[0].main);
+}
+
+/* 🎨 Background dinâmico */
+function mudarBackground(clima) {
+
+  document.body.className = "";
+
+  if (clima.includes("Clear")) document.body.classList.add("clear");
+  else if (clima.includes("Clouds")) document.body.classList.add("clouds");
+  else if (clima.includes("Rain")) document.body.classList.add("rain");
+  else if (clima.includes("Snow")) document.body.classList.add("snow");
+}
+
+/* 📅 Forecast cidade */
+async function carregarForecast(cidade) {
+
+  const url =
+  `https://api.openweathermap.org/data/2.5/forecast?q=${cidade}&appid=${API_KEY}&units=metric&lang=pt_br`;
+
+  const res = await fetch(url);
+  const data = await res.json();
+
+  mostrarForecast(data);
+}
+
+/* 📅 Forecast coords */
+async function carregarForecastCoords(lat, lon) {
+
+  const url =
+  `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=pt_br`;
+
+  const res = await fetch(url);
+  const data = await res.json();
+
+  mostrarForecast(data);
+}
+
+/* 🖥️ Mostrar previsão */
+function mostrarForecast(data) {
+
+  const forecastDiv = document.getElementById("forecast");
+  forecastDiv.innerHTML = "";
+
+  const dias = data.list.filter(item =>
+    item.dt_txt.includes("12:00:00")
+  );
+
+  dias.slice(0,5).forEach(dia => {
+
+    const card = document.createElement("div");
+    card.className = "forecast-card";
+
+    const dataFormatada =
+      new Date(dia.dt_txt).toLocaleDateString("pt-BR");
+
+    card.innerHTML = `
+      <p>${dataFormatada}</p>
+      <img src="https://openweathermap.org/img/wn/${dia.weather[0].icon}.png">
+      <p>${Math.round(dia.main.temp)}°C</p>
+    `;
+
+    forecastDiv.appendChild(card);
+  });
 }
