@@ -1,20 +1,21 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.weather-app {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  width: 320px;
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.container {
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 h1 {
@@ -22,72 +23,69 @@ h1 {
 }
 
 .search-box {
-  display: flex;
-  gap: 10px;
   margin-bottom: 20px;
 }
 
 .search-box input {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
+  padding: 12px;
+  width: 200px;
+  border: none;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
 }
 
 .search-box button {
-  padding: 10px 15px;
+  padding: 12px 15px;
   border: none;
   border-radius: 8px;
-  background: #4facfe;
+  background: #222;
   color: white;
+  font-size: 16px;
   cursor: pointer;
-  font-weight: bold;
 }
 
-.weather-result img {
-  width: 80px;
-}
-
-.temperature {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.description {
-  text-transform: capitalize;
-  color: gray;
-}
-
-.container {
-  text-align: center;
-  color: white;
+.search-box button:hover {
+  background: #000;
 }
 
 .weather-card {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  padding: 25px;
+  padding: 30px;
   border-radius: 20px;
-  width: 300px;
+  width: 320px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .weather-card img {
-  width: 80px;
+  width: 90px;
+}
+
+.temperature {
+  font-size: 42px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.description {
+  text-transform: capitalize;
 }
 
 .details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 12px;
   margin-top: 20px;
 }
 
 .detail-box {
   background: rgba(255,255,255,0.2);
-  padding: 10px;
-  border-radius: 10px;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.detail-box span {
   font-size: 14px;
 }
 

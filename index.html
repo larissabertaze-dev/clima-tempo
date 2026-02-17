@@ -1,49 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Previsão do Tempo</title>
+  <title>Clima Tempo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="weather-app">
+<div class="container">
 
-    <h1>🌤️ Clima / Previsão do Tempo</h1>
+  <h1>🌦️ Clima Tempo</h1>
 
-    <!-- Busca -->
-    <div class="search-box">
-      <input
-        type="text"
-        id="cityInput"
-        placeholder="Digite a cidade..."
-      />
-      <button onclick="searchCity()">Buscar</button>
-    </div>
-
-    <!-- Resultado -->
-    <div class="weather-result" id="weatherResult">
-      <p>Busque uma cidade para ver o clima</p>
-    </div>
-
+  <!-- 🔎 Busca -->
+  <div class="search-box">
+    <input
+      type="text"
+      id="cityInput"
+      placeholder="Digite a cidade..."
+    >
+    <button onclick="buscarClima()">Buscar</button>
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
- <!-- Card Clima -->
-  <div class="weather-card" id="weatherCard">
+  <!-- 🌤️ Card Clima -->
+  <div class="weather-card">
 
     <h2 id="cityName">--</h2>
 
-    <img id="weatherIcon" src="" alt="Ícone do clima">
+    <img id="weatherIcon" src="" alt="Ícone clima">
 
-    <p class="temp" id="temperature">--°C</p>
+    <p class="temperature" id="temperature">--°C</p>
 
-    <p id="description">Descrição</p>
+    <p class="description" id="description">
+      Descrição do clima
+    </p>
 
-    <!-- Componentes extras -->
+    <!-- 📊 Componentes extras -->
     <div class="details">
 
       <div class="detail-box">
@@ -57,12 +48,12 @@
       </div>
 
       <div class="detail-box">
-        <span>🔻 Mín</span>
+        <span>🔻 Mínima</span>
         <strong id="tempMin">--°C</strong>
       </div>
 
       <div class="detail-box">
-        <span>🔺 Máx</span>
+        <span>🔺 Máxima</span>
         <strong id="tempMax">--°C</strong>
       </div>
 
