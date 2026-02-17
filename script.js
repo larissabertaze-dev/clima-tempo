@@ -39,6 +39,25 @@ function showWeather(data) {
   `;
 }
 
+async function buscarClima() {
+
+  const cidade = document.getElementById("cityInput").value;
+
+  if (!cidade) return;
+
+  const url =
+    `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${API_KEY}&units=metric&lang=pt_br`;
+
+  try {
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data.cod !== 200) {
+      alert("Cidade não encontrada");
+      return;
+    }
+
  // 📍 Dados principais
     document.getElementById("cityName").textContent =
       `${data.name}, ${data.sys.country}`;
