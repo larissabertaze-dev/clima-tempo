@@ -1,4 +1,4 @@
-const API_KEY = "34f4bbf55c9be3781d554d7fc100294";
+const API_KEY = "242c2d80bb4c5b016e11fc8e4bacfade";
 
 async function buscarClima() {
 
