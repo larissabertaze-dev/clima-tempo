@@ -1,2 +1,47 @@
-# clima-tempo
+# 🌤️ Projeto Clima / Previsão do Tempo
+
 Aplicação web desenvolvida em React que consome a API OpenWeather para exibir informações climáticas em tempo real.
+
+## 🚀 Funcionalidades
+
+- Buscar cidade pelo nome
+- Exibir temperatura atual
+- Ícone do clima
+- Descrição do tempo
+- Umidade do ar
+- Velocidade do vento
+- Temperatura mínima e máxima
+
+## 🛠️ Tecnologias utilizadas
+
+- React
+- Tailwind CSS
+- shadcn/ui
+- API OpenWeather
+
+## 🔑 Como obter a API KEY
+
+1. Acesse: https://openweathermap.org/
+2. Crie uma conta gratuita
+3. Vá em "API Keys"
+4. Copie sua chave
+5. Cole no código:
+
+const API_KEY = "SUA_API_KEY_AQUI";
+
+## ▶️ Como rodar o projeto
+
+```bash
+npm install
+npm run dev
+```
+
+## 📌 Melhorias futuras (ideias)
+
+- Previsão para 5 dias
+- Geolocalização automática
+- Tema dark/light
+- Histórico de buscas
+- Animações de clima
+
+================= */

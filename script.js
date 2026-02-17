@@ -1,5 +1,5 @@
 // 🔑 COLOQUE SUA API KEY AQUI
-const apiKey = "SUA_API_KEY_AQUI";
+const apiKey = "5e3d7096bda36f8176d2768469848ad6";
 
 async function searchCity() {
   const city = document.getElementById("cityInput").value;
