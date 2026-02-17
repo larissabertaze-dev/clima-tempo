@@ -19,23 +19,6 @@ Aplicação web desenvolvida em React que consome a API OpenWeather para exibir 
 - shadcn/ui
 - API OpenWeather
 
-## 🔑 Como obter a API KEY
-
-1. Acesse: https://openweathermap.org/
-2. Crie uma conta gratuita
-3. Vá em "API Keys"
-4. Copie sua chave
-5. Cole no código:
-
-const API_KEY = "SUA_API_KEY_AQUI";
-
-## ▶️ Como rodar o projeto
-
-```bash
-npm install
-npm run dev
-```
-
 ## 📌 Melhorias futuras (ideias)
 
 - Previsão para 5 dias
