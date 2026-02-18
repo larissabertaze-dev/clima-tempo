@@ -10,10 +10,10 @@ body {
 }
 
 /* Fundos por clima */
-body.clear { background: linear-gradient(#4facfe,#00f2fe); }
-body.clouds { background: linear-gradient(#757f9a,#d7dde8); }
+body.clear { background: linear-gradient(#1f6db0,#00f2fe); }
+body.clouds { background: linear-gradient(#3d5699,#2e59a9); }
 body.rain { background: linear-gradient(#314755,#26a0da); }
-body.snow { background: linear-gradient(#e6dada,#274046); }
+body.snow { background: linear-gradient(#b24141,#274046); }
 
 /* Dark */
 body.dark {
