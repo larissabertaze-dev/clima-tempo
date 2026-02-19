@@ -28,22 +28,6 @@ body.dark {
   cursor: pointer;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
-
-  width: 95%;
-  max-width: 900px;   /* ← mais largo */
-
-  padding: 30px;
-  border-radius: 20px;
-
-  backdrop-filter: blur(12px);
-  background: rgba(255,255,255,0.15);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-
-  text-align: center;
-}
 
 .weather-card {
   background: rgba(255,255,255,0.15);
@@ -104,16 +88,19 @@ body::before {
 .container {
   position: relative;
   z-index: 1;
+
   width: 95%;
-  max-width: 420px;
-  padding: 25px;
+  max-width: 900px;   /* ← mais largo */
+
+  padding: 30px;
   border-radius: 20px;
+
   backdrop-filter: blur(12px);
   background: rgba(255,255,255,0.15);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
   text-align: center;
 }
-
 /* Título maior */
 h1 {
   font-size: 2.4rem;
