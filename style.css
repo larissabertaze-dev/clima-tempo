@@ -164,6 +164,13 @@ h1 {
 
 /* Forecast */
 
+.forecast {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
 .forecast div {
   min-width: 80px;
   background: rgba(255,255,255,0.2);
