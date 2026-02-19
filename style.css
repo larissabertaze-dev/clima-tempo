@@ -56,3 +56,142 @@ body.dark {
   border-radius: 10px;
   width: 80px;
 }
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fundo tela toda */
+body {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transition: background 0.6s ease;
+}
+
+/* Overlay escuro para legibilidade */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 0;
+}
+
+/* Container principal */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 95%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+/* Título maior */
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+/* Busca */
+.search-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #ffffffcc;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #fff;
+}
+
+/* Card clima */
+.weather-card h2 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+}
+
+.temperature {
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+#description {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+/* Detalhes */
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  font-size: 1.1rem;
+}
+
+.details div {
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 12px;
+}
+
+/* Forecast */
+.forecast {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.forecast div {
+  min-width: 80px;
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+/* Botão tema */
+#themeToggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
