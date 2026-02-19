@@ -143,3 +143,32 @@ function mostrarForecast(data) {
     forecastDiv.appendChild(card);
   });
 }
+
+function mudarBackground(clima) {
+  const body = document.body;
+
+  if (clima.includes("Clouds")) {
+    body.style.backgroundImage =
+      "url('https://images.unsplash.com/photo-1501630834273-4b5604d2ee31')";
+  }
+
+  else if (clima.includes("Rain")) {
+    body.style.backgroundImage =
+      "url('https://images.unsplash.com/photo-1502082553048-f009c37129b9')";
+  }
+
+  else if (clima.includes("Clear")) {
+    body.style.backgroundImage =
+      "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')";
+  }
+
+  else if (clima.includes("Snow")) {
+    body.style.backgroundImage =
+      "url('https://images.unsplash.com/photo-1608889175123-8ee362201f81')";
+  }
+
+  else {
+    body.style.backgroundImage =
+      "url('https://images.unsplash.com/photo-1499346030926-9a72daac6c63')";
+  }
+}
