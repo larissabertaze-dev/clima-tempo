@@ -172,3 +172,54 @@ function mudarBackground(clima) {
       "url('https://images.unsplash.com/photo-1499346030926-9a72daac6c63')";
   }
 }
+
+function mostrarPrevisao(dados) {
+
+  const forecastDiv = document.getElementById("forecast");
+  forecastDiv.innerHTML = "";
+
+  const dias = {};
+
+  // Agrupa por dia
+  dados.list.forEach(item => {
+    const data = item.dt_txt.split(" ")[0];
+
+    if (!dias[data]) {
+      dias[data] = item;
+    }
+  });
+
+  // Pega só 5 dias
+  const previsoes = Object.values(dias).slice(0, 5);
+
+  previsoes.forEach(dia => {
+
+    const data = new Date(dia.dt_txt);
+    const nomeDia = data.toLocaleDateString("pt-BR", {
+      weekday: "short"
+    });
+
+    const icone =
+      `https://openweathermap.org/img/wn/${dia.weather[0].icon}@2x.png`;
+
+    forecastDiv.innerHTML += `
+      <div class="forecast-card">
+
+        <div class="forecast-day">
+          ${nomeDia}
+        </div>
+
+        <img src="${icone}">
+
+        <div class="forecast-temp">
+          ${Math.round(dia.main.temp_max)}°C
+        </div>
+
+        <div class="forecast-min">
+          Min ${Math.round(dia.main.temp_min)}°C
+        </div>
+
+      </div>
+    `;
+  });
+}
