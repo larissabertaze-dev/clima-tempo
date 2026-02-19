@@ -1,30 +1,60 @@
-# 🌤️ Projeto Clima / Previsão do Tempo
 
-Aplicação web desenvolvida em React que consome a API OpenWeather para exibir informações climáticas em tempo real.
+# 🌦️ Clima Tempo — Weather App
+
+Aplicação web de previsão do tempo desenvolvida com **HTML, CSS e JavaScript**, consumindo API de clima em tempo real.
+
+O projeto permite buscar cidades, obter localização atual e visualizar previsão para os próximos dias com layout moderno e responsivo.
+
+---
 
 ## 🚀 Funcionalidades
 
-- Buscar cidade pelo nome
-- Exibir temperatura atual
-- Ícone do clima
-- Descrição do tempo
-- Umidade do ar
-- Velocidade do vento
-- Temperatura mínima e máxima
+✅ Busca de clima por cidade
+✅ Clima pela localização atual (geolocalização)
+✅ Temperatura atual
+✅ Descrição do clima
+✅ Umidade do ar
+✅ Velocidade do vento
+✅ Temperatura mínima e máxima
+✅ Previsão dos próximos 5 dias
+✅ Ícones dinâmicos de clima
+✅ Plano de fundo que muda conforme o clima
+✅ Layout responsivo
+
+---
 
 ## 🛠️ Tecnologias utilizadas
 
-- React
-- Tailwind CSS
-- shadcn/ui
-- API OpenWeather
+* HTML5
+* CSS3
+* JavaScript (Vanilla)
+* API OpenWeather
+* Geolocation API
 
-## 📌 Melhorias futuras (ideias)
+---
 
-- Previsão para 5 dias
-- Geolocalização automática
-- Tema dark/light
-- Histórico de buscas
-- Animações de clima
+## 🌍 Funcionalidade de Geolocalização
 
-================= */
+O app pode capturar sua localização automaticamente para mostrar o clima atual da sua região.
+
+Necessário permitir acesso à localização no navegador.
+
+---
+
+## 🎨 Personalizações Implementadas
+
+* Layout glassmorphism
+* Cards de previsão ampliados
+* Background dinâmico por clima:
+
+  * ☀️ Ensolarado
+  * ☁️ Nublado
+  * 🌧️ Chuva
+  * ❄️ Neve
+* Animações hover
+* Tipografia ampliada
+
+---
+
+Projeto criado para fins de estudo e prática de consumo de APIs e desenvolvimento front-end.
+
