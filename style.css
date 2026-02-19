@@ -36,16 +36,32 @@ body.dark {
 
 .forecast {
   margin-top: 25px;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 18px;
 }
 
 .forecast-card {
-  background: rgba(255,255,255,0.2);
-  padding: 10px;
-  border-radius: 10px;
-  width: 80px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+
+  border-radius: 18px;
+  padding: 20px 15px;
+
+  text-align: center;
+
+  min-height: 180px;   /* ← altura maior */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: 0.3s;
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.25);
 }
 
 /* Reset */
@@ -220,24 +236,24 @@ h1 {
 
 /* Dia da semana */
 .forecast-day {
-  font-size: 1.1rem;
+  font-size: 1.25rem;   /* maior */
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 /* Ícone */
 .forecast-card img {
-  width: 55px;
-  margin: 5px 0;
+  width: 65px;
+  margin: 8px auto;
 }
 
 /* Temperaturas */
 .forecast-temp {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
 .forecast-min {
-  font-size: 0.95rem;
-  opacity: 0.8;
+  font-size: 1.05rem;
+  opacity: 0.85;
 }
