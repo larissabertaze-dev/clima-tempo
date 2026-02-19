@@ -154,7 +154,7 @@ function mudarBackground(clima) {
 
   else if (clima.includes("Rain")) {
     body.style.backgroundImage =
-      "url('https://images.unsplash.com/photo-1502082553048-f009c37129b9')";
+      "url('https://media.istockphoto.com/id/1257951336/pt/foto/transparent-umbrella-under-rain-against-water-drops-splash-background-rainy-weather-concept.jpg?s=612x612&w=0&k=20&c=J-an6RNfKUh3hwTXFxVUJ3RQFCeEeKa24_PLwWrnaGY=')";
   }
 
   else if (clima.includes("Clear")) {
