@@ -15,18 +15,6 @@ body.clouds { background: linear-gradient(#757f9a,#d7dde8); }
 body.rain { background: linear-gradient(#314755,#26a0da); }
 body.snow { background: linear-gradient(#e6dada,#274046); }
 
-/* Dark */
-body.dark {
-  background: #111;
-}
-
-#themeToggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px;
-  cursor: pointer;
-}
 
 .temperature {
   font-size: 40px;
