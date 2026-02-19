@@ -165,10 +165,10 @@ h1 {
 /* Forecast */
 
 .forecast {
-  margin-top: 20px;
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 15px;
 }
 
 .forecast div {
