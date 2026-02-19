@@ -1,11 +1,5 @@
 const API_KEY = "242c2d80bb4c5b016e11fc8e4bacfade";
 
-const themeToggle = document.getElementById("themeToggle");
-
-/* 🌗 Tema */
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-});
 
 /* 🔎 Buscar cidade */
 async function buscarClima() {
