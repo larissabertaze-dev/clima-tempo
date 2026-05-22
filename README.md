@@ -51,8 +51,13 @@ Necessário permitir acesso à localização no navegador.
   * ☁️ Nublado
   * 🌧️ Chuva
   * ❄️ Neve
-* Animações hover
-* Tipografia ampliada
+  * Animações hover
+  * Tipografia ampliada
+---
+
+## 📷 Projeto
+<img width="1897" height="872" alt="image" src="https://github.com/user-attachments/assets/645804b2-4e9f-4635-9059-3b2c23fd96f1" />
+
 
 ---
 
